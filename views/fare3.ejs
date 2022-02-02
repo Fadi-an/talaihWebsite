@@ -1,0 +1,88 @@
+<%- include("partials/header"); -%>
+
+<div class="fare3">
+
+  <h1>Add a post</h1>
+  <form action="/compose" method="post">
+    <div class="form-group">
+      <label for="postTitle">Title</label>
+      <input class="form-control" type="text" name="postTitle" cols="150" rows="1" autocomplete="off">
+      <label for="postBody">Post</label>
+      <textarea class="form-control" name="postContent" cols="150" rows="5" autocomplete="off"></textarea>
+      <input type="hidden" name="branchName" value="<%= branch.branchName %>">
+    </div>
+    <button class="btn btn-primary" type="submit" name="button">Publish</button>
+  </form>
+
+  <h1 style="text-align: center">Posts</h1>
+  <% posts.forEach(function(post){ %>
+    <h3><%= post.postTitle %><h3>
+    <p><%= post.postContent %></p>
+  <% }) %>
+
+  <h1>Members of <%= branch.branchName %></h1>
+
+  <table class="table">
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Date Of Birth</th>
+        <th scope="col">Date Of Vow</th>
+        <th scope="col">Blood Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% members.forEach(function(member, i){ %>
+        <tr>
+          <th scope="row"><%= i + 1 %></th>
+          <td><%= member.name %></td>
+          <td><%= member.dateOfBirth %></td>
+          <td><%= member.dateOfVow %></td>
+          <td><%= member.bloodType %></td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+
+
+  <h1>Add a Member</h1>
+
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="card">
+        <div class="card-body">
+          <form action="/addmember" method="post">
+            <div class="form-group">
+              <label for="memberName">Member Name</label>
+              <input class="form-control" name="memberName">
+            </div>
+            <div class="form-group">
+              <label for="dateOfBirth">Date of Birth</label>
+              <input type="date" class="form-control" name="dateOfBirth">
+            </div>
+            <div class="form-group">
+              <label for="dateOfVow">Date of Vow</label>
+              <input type="date" class="form-control" name="dateOfVow">
+            </div>
+            <div class="form-group">
+              <label for="bloodType">Blood Type</label>
+              <select name="bloodType">
+                <option value="A-">A-</option>
+                <option value="A+">A+</option>
+                <option value="B-">B-</option>
+                <option value="B+">B+</option>
+              </select>
+            </div>
+            <input type="hidden" name="branchName" value="<%= branch.branchName %>">
+            <button type="submit" class="btn btn-dark">Add Member</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+</div>
+
+
+
+<%- include("partials/footer"); -%>

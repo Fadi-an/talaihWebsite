@@ -1,0 +1,110 @@
+h1, h2{
+  color:black;
+}
+
+#navigation{
+  background-color:black;
+  padding: 1%;
+  text-align:center;
+}
+.navigation-image{
+  width:3%;
+  margin:auto;
+}
+.navbar-nav{
+  margin: 0% 50% 0%;
+}
+nav-text{
+  color:white;
+  display: inline-block;
+  font-size: 2rem;
+  margin: auto 10%;
+  font-weight:bold;
+}
+.carousel-item{
+  height:600px;
+}
+#LejneMembers{
+  text-align: center;
+  background-color:#950101;
+  padding-bottom:4%;
+  padding-top:4%;
+}
+.LejneMemberRow{
+  margin:250px;
+}
+.right-image{
+  margin-bottom: 2rem;
+  width:50%;
+}
+.left-image{
+  margin-bottom: 2rem;
+  width:50%;
+}
+.footer{
+  background-color: #FF0000;
+  text-align:center;
+  padding:3%;
+}
+.footer-icon{
+  margin:3% 1%;
+}
+.copyright{
+  color:#EAF6F6;
+  font-size:0.75rem;
+}
+
+.video{
+  background-color: #212529;
+  padding: 5% 5%;
+  text-align: center;
+}
+
+.posts{
+  background-color: white;
+  text-align: center;
+  padding: 5% 5%;
+}
+
+.fare3{
+  text-align: center;
+}
+.row {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.row .row {
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+.bg {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: rgba(86, 61, 124, .15);
+  border: 1px solid rgba(86, 61, 124, .2);
+}
+
+#fourou3{
+  padding-top: 1rem;
+}
+
+#fourou3 h2{
+  text-align: center;
+  font-size: 3rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+#lejne{
+  background-color: #950101;
+}
+#lejne h2{
+  text-align: center;
+  font-size: 3rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+#lejne .carousel{
+  height: 400px;
+}

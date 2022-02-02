@@ -1,0 +1,9 @@
+<%- include("partials/header"); -%>
+
+<ul>
+<% branches.forEach(function(branch){ %>
+  <li><a href="/fourou3/<%= branch.branchName %>"><%= branch.branchName %></a></li>
+<% }) %>
+</ul>
+
+<%- include("partials/footer"); -%>

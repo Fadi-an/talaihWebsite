@@ -1,0 +1,106 @@
+<%- include("partials/header"); -%>
+
+<% if(members.length != 0){ %>
+
+  <h1>Members of <%= branchName %></h1>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Date Of Birth</th>
+        <th scope="col">Date Of Vow</th>
+        <th scope="col">Blood Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% members.forEach(function(member, i){ %>
+        <tr>
+          <th scope="row"><%= i + 1 %></th>
+          <td><%= member.name %></td>
+          <td><%= member.dateOfBirth %></td>
+          <td><%= member.dateOfVow %></td>
+          <td><%= member.bloodType %></td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+
+
+  <h1>Add a Member</h1>
+
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="card">
+        <div class="card-body">
+          <form action="/members" method="post">
+            <div class="form-group">
+              <label for="memberName">Member Name</label>
+              <input class="form-control" name="memberName">
+            </div>
+            <div class="form-group">
+              <label for="dateOfBirth">Date of Birth</label>
+              <input type="date" class="form-control" name="dateOfBirth">
+            </div>
+            <div class="form-group">
+              <label for="dateOfVow">Date of Vow</label>
+              <input type="date" class="form-control" name="dateOfVow">
+            </div>
+            <div class="form-group">
+              <label for="bloodType">Blood Type</label>
+              <select name="bloodType">
+                <option value="A-">A-</option>
+                <option value="A+">A+</option>
+                <option value="B-">B-</option>
+                <option value="B+">B+</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-dark">Add Member</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+  <%- include("partials/footer"); -%>
+<% } else{ %>
+
+  <h1>Add a Member</h1>
+
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="card">
+        <div class="card-body">
+          <form action="/members" method="post">
+            <div class="form-group">
+              <label for="memberName">Member Name</label>
+              <input class="form-control" name="memberName">
+            </div>
+            <div class="form-group">
+              <label for="dateOfBirth">Date of Birth</label>
+              <input type="date" class="form-control" name="dateOfBirth">
+            </div>
+            <div class="form-group">
+              <label for="dateOfVow">Date of Vow</label>
+              <input type="date" class="form-control" name="dateOfVow">
+            </div>
+            <div class="form-group">
+              <label for="bloodType">Blood Type</label>
+              <select name="bloodType">
+                <option value="A-">A-</option>
+                <option value="A+">A+</option>
+                <option value="B-">B-</option>
+                <option value="B+">B+</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-dark">Add Member</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+  <%- include("partials/footer"); -%>
+
+<% } %>
